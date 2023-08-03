@@ -1,21 +1,22 @@
 import { posts } from "../data/post.js";
 
 export const checkPostExist = (req, res, next) => {
-  const { id } = req.params;
+  try {
+    const { id } = req.params;
 
-  const { userId } = req.query;
+    const post = posts.find((post) => post.id === id);
 
-  const postIndex = posts.findIndex(
-    (post) => post.id === id && post.userId === userId
-  );
+    if (!post) {
+      throw new Error("Post is not exist");
+    }
 
-  if (postIndex !== -1) {
-    req.postIndex = postIndex;
+    req.post = post;
     next();
-    return;
+  } catch (error) {
+    res.status(400).send({
+      message: error.message,
+    });
   }
-
-  res.status(400).send("Post khong tim thay");
 };
 
 // DELETE api/post/:id?userId=HIUHUIHIU

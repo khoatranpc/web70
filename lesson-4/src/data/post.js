@@ -9,10 +9,6 @@ export const posts = [
       image:
         "https://vcdn-vnexpress.vnecdn.net/2023/07/26/3-JPG-9385-1675933270-jpeg-8296-1690374843.jpg",
     },
-    viewer: [
-      "74d2e282-3229-44de-bb90-9f4d15354f04",
-      "c99b9192-6dd2-4ef8-864e-37d2360a55a4",
-    ],
   },
   {
     id: "d749618e-53e9-4cea-b97a-6cb2aaeb9b20",

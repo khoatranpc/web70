@@ -3,10 +3,23 @@ import { posts } from "../data/post.js";
 import { checkUser } from "../middlewares/checkUser.js";
 import crypto from "crypto";
 import { checkPostExist } from "../middlewares/checkPostExist.js";
+import { checkApiKey } from "../middlewares/checkApiKey.js";
+import { handleViewer } from "../middlewares/handleViewer.js";
 
 const postRouter = Router();
 
 postRouter.get("/", (req, res, next) => {});
+
+postRouter.get(
+  "/:id",
+  checkApiKey,
+  checkPostExist,
+  handleViewer,
+  (req, res) => {
+    const post = req.post;
+    res.status(200).send(post);
+  }
+);
 
 postRouter.post("/", checkUser, (req, res) => {
   const { userId } = req.query;

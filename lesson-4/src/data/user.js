@@ -4,25 +4,20 @@ export const users = [
     username: "vanA",
     password: "123456",
     fullname: "Nguyen Van A",
-    apiKey: "vanA123456",
+    apiKey: "vanA.123456",
   },
   {
     id: "c99b9192-6dd2-4ef8-864e-37d2360a55a4",
     username: "nguyenvanB",
     password: "vanB123",
     fullname: "Nguyen Van B",
-    apiKey: "nguyenvanBvanB1234",
+    apiKey: "nguyenvanB.vanB123",
   },
   {
     id: "36128291-709e-466f-8567-966deae2f1b2",
     username: "NVanC",
     password: "123456C",
     fullname: "Nguyen Van C",
-    apiKey: "123456CNVanC",
+    apiKey: "NVanC.123456C",
   },
 ];
-
-const res = {
-  message: "Đăng nhập thành công",
-  apiKey: { apiKey },
-};
